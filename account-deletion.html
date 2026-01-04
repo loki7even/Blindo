@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppression de compte - Blindo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 24px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .section h3 {
+            color: #555;
+            font-size: 18px;
+            margin: 20px 0 10px 0;
+        }
+        
+        .section p, .section ul {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .section ul {
+            padding-left: 25px;
+        }
+        
+        .section li {
+            margin-bottom: 8px;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .warning-box p {
+            color: #856404;
+            margin: 0;
+        }
+        
+        .info-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .info-box p {
+            color: #0c5460;
+            margin: 0;
+        }
+        
+        .steps {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: start;
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+            padding-top: 4px;
+        }
+        
+        .contact-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.2s;
+            margin-top: 10px;
+        }
+        
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .data-table th,
+        .data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .data-table th {
+            background: #f8f9fa;
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .section h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏃 Blindo</h1>
+            <p>Suppression de compte et de données</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>📋 Procédure de suppression de compte</h2>
+                
+                <p>
+                    Vous avez le droit de demander la suppression complète de votre compte Blindo 
+                    et de toutes les données personnelles associées. Cette page explique comment 
+                    procéder et quelles données seront supprimées ou conservées.
+                </p>
+                
+                <div class="warning-box">
+                    <p><strong>⚠️ Attention :</strong> La suppression de votre compte est définitive et irréversible. 
+                    Toutes vos données personnelles, historique de courses et statistiques seront 
+                    définitivement supprimés.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🔄 Comment supprimer votre compte</h2>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <strong>Depuis l'application</strong><br>
+                            Ouvrez l'application Blindo > Profil > Paramètres > "Supprimer mon compte"
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <strong>Par email</strong><br>
+                            Envoyez un email à <strong>lounesbehloul03@gmail.com</strong>
+                            avec l'objet "Suppression de compte" en précisant :
+                            <ul style="margin-top: 10px; margin-bottom: 0;">
+                                <li>Votre nom d'utilisateur</li>
+                                <li>L'adresse email associée à votre compte</li>
+                                <li>La confirmation que vous souhaitez supprimer définitivement votre compte</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <strong>Confirmation</strong><br>
+                            Vous recevrez un email de confirmation. Cliquez sur le lien de confirmation 
+                            pour valider la suppression.
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <strong>Suppression effective</strong><br>
+                            Votre compte et vos données seront supprimés dans un délai maximum de 30 jours.
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="mailto:lounesbehloul03@gmail.com?subject=Demande%20de%20suppression%20de%20compte" class="contact-button">
+                    ✉️ Contacter le support
+                </a>
+            </div>
+            
+            <div class="section">
+                <h2>🗑️ Données supprimées</h2>
+                
+                <p>Les données suivantes seront <strong>supprimées définitivement</strong> :</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Type de données</th>
+                            <th>Détails</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Informations de compte</strong></td>
+                            <td>Nom d'utilisateur, email, mot de passe, identifiant unique</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Données de profil</strong></td>
+                            <td>Photo de profil, préférences, paramètres</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Historique de courses</strong></td>
+                            <td>Toutes les courses auxquelles vous avez participé</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Données d'équipe</strong></td>
+                            <td>Équipes créées ou rejointes, rôles, statistiques</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Communications</strong></td>
+                            <td>Messages échangés, historique de chat</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Données de connexion</strong></td>
+                            <td>Jetons d'authentification, sessions actives</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="info-box">
+                    <p><strong>ℹ️ Important :</strong> Les flux vidéo et audio ne sont jamais enregistrés 
+                    par Blindo. Ils sont transmis en temps réel uniquement et ne sont donc pas stockés.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>📦 Données conservées</h2>
+                
+                <p>
+                    Certaines données peuvent être conservées temporairement pour des raisons légales, 
+                    de sécurité ou techniques :
+                </p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Type de données</th>
+                            <th>Durée de conservation</th>
+                            <th>Raison</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Logs de sécurité</strong></td>
+                            <td>90 jours maximum</td>
+                            <td>Conformité légale et détection de fraude</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Données de facturation</strong></td>
+                            <td>Selon obligations légales (jusqu'à 10 ans)</td>
+                            <td>Obligations comptables et fiscales</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Données anonymisées</strong></td>
+                            <td>Indéfiniment</td>
+                            <td>Statistiques et amélioration du service (sans lien avec vous)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sauvegardes système</strong></td>
+                            <td>30 jours maximum</td>
+                            <td>Intégrité et sécurité du système</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p style="margin-top: 20px;">
+                    <strong>Note :</strong> Les données anonymisées sont des statistiques agrégées qui ne 
+                    permettent plus de vous identifier (exemple : "nombre total de courses par mois").
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>⏱️ Délais de suppression</h2>
+                
+                <ul>
+                    <li><strong>Suppression immédiate :</strong> Accès au compte désactivé immédiatement après confirmation</li>
+                    <li><strong>Suppression des données personnelles :</strong> Sous 30 jours</li>
+                    <li><strong>Suppression des sauvegardes :</strong> Sous 30 jours (cycle normal de rotation)</li>
+                    <li><strong>Données conservées légalement :</strong> Selon les durées mentionnées ci-dessus</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>❓ Questions fréquentes</h2>
+                
+                <h3>Puis-je récupérer mes données après suppression ?</h3>
+                <p>
+                    Non, la suppression est définitive. Nous vous recommandons d'exporter vos données 
+                    avant de supprimer votre compte si vous souhaitez les conserver.
+                </p>
+                
+                <h3>Puis-je réactiver mon compte après suppression ?</h3>
+                <p>
+                    Non, une fois le compte supprimé, il n'est pas possible de le réactiver. 
+                    Vous devrez créer un nouveau compte si vous souhaitez réutiliser l'application.
+                </p>
+                
+                <h3>Que deviennent mes équipes et mes courses ?</h3>
+                <p>
+                    Vos équipes seront dissoutes si vous en êtes l'unique membre. Si d'autres membres 
+                    existent, votre départ sera enregistré comme "utilisateur supprimé" dans l'historique, 
+                    mais sans vos données personnelles.
+                </p>
+                
+                <h3>Les autres utilisateurs verront-ils mes anciennes données ?</h3>
+                <p>
+                    Non, toutes vos données personnelles seront remplacées par "Utilisateur supprimé" 
+                    dans l'historique visible par d'autres utilisateurs.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>📞 Besoin d'aide ?</h2>
+                
+                <p>
+                    Si vous avez des questions concernant la suppression de votre compte ou 
+                    souhaitez obtenir plus d'informations sur le traitement de vos données :
+                </p>
+                
+                <ul>
+                    <li><strong>Email :</strong> lounesbehloul03@gmail.com</li>
+                    <li><strong>Délai de réponse :</strong> Sous 48 heures ouvrées</li>
+                </ul>
+                
+                <a href="mailto:lounesbehloul03@gmail.com?subject=Question%20sur%20la%20suppression%20de%20compte" class="contact-button">
+                    ✉️ Nous contacter
+                </a>
+            </div>
+            
+            <div class="section">
+                <h2>⚖️ Vos droits</h2>
+                
+                <p>
+                    En plus du droit à la suppression, vous disposez également des droits suivants 
+                    concernant vos données personnelles :
+                </p>
+                
+                <ul>
+                    <li><strong>Droit d'accès :</strong> Obtenir une copie de vos données</li>
+                    <li><strong>Droit de rectification :</strong> Corriger vos données inexactes</li>
+                    <li><strong>Droit à la portabilité :</strong> Recevoir vos données dans un format structuré</li>
+                    <li><strong>Droit d'opposition :</strong> Vous opposer à certains traitements</li>
+                    <li><strong>Droit de limitation :</strong> Limiter le traitement de vos données</li>
+                </ul>
+                
+                <p>
+                    Pour exercer ces droits, consultez notre 
+                    <a href="https://github.com/loki7even/Blindo/blob/main/PRIVACY_POLICY.md" style="color: #667eea; text-decoration: none; font-weight: 600;">
+                        Politique de confidentialité
+                    </a> 
+                    ou contactez-nous à lounesbehloul03@gmail.com
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>
+                © 2026 Blindo - Tous droits réservés<br>
+                <a href="https://github.com/loki7even/Blindo/blob/main/PRIVACY_POLICY.md" style="color: #667eea; text-decoration: none;">Politique de confidentialité</a>
+            </p>
+            <p style="margin-top: 10px; font-size: 12px;">
+                Dernière mise à jour : 4 janvier 2026
+            </p>
+        </div>
+    </div>
+</body>
+</html>
